@@ -13,11 +13,13 @@
 			let n = arr.length;
 			if(n<=1) return -Infinity;
 			let shighest = -Infinity;
-			let highest = -Infinity;
+			let highest = arr[0];
 			for(let i=0; i<n; i++){
-				if(arr[i]>shighest){
+				if(arr[i]>highest){
 					shighest = highest;
 					highest = arr[i];
+				}else if(arr[i]>shighest && arr[i]<highest){
+					shighest = arr[i];
 				}
 			}
 			return shighest;
@@ -26,14 +28,14 @@
 			
 		}
 
-		// function Main() {
-		// 	var n = prompt("Enter the number of elements");
-		// 	var arr = [];
-		// 	// for (var i = 0; i < n; i++) {
-		// 	// 	arr[i] = prompt("Enter element " + (i+1));
-		// 	// }
-		// 	// alert(secondHighest(arr));
-		// }
+		function Main() {
+			var n = prompt("Enter the number of elements");
+			var arr = [];
+			for (var i = 0; i < n; i++) {
+				arr[i] = prompt("Enter element " + (i+1));
+			}
+			alert(secondHighest(arr));
+		}
 		Main();
 	</script>
 
